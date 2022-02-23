@@ -6,7 +6,10 @@ metadata:
 spec:
   secretName: kubeflow-ingressgateway-certs
   issuerRef:
-    name: gateways-issuer
     kind: ClusterIssuer
-  dnsNames:
-    - kubeflow.example.com
+    name: gateways-issuer
+  commonName: istio-ingressgateway.istio-system.svc
+  ipAddresses:
+  - 192.168.35.100
+  - 192.168.35.101
+  - 192.168.35.102
